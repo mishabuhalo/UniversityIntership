@@ -15,7 +15,8 @@ namespace RestfulService.Infrastructure
         {
             string connection = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
-            
+
+            return services;
         }
     }
 }
