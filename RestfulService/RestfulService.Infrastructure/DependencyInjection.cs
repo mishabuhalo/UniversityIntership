@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestfulService.Application;
 using RestfulService.Infrastructure.Persistance;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,8 @@ namespace RestfulService.Infrastructure
         {
             string connection = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+
+            services.AddScoped<IApplicationDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             return services;
         }

@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\RestfulService.Application\RestfulService.Application.csproj" />
     <ProjectReference Include="..\RestfulService.Domain\RestfulService.Domain.csproj" />
   </ItemGroup>
 

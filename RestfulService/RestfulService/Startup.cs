@@ -5,7 +5,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RestfulService.Infrastructure;
 using RestfulService.Infrastructure.Persistance;
-using MediatR
+using MediatR;
+using RestfulService.Application.Countries;
 
 namespace RestfulService
 {
@@ -24,7 +25,7 @@ namespace RestfulService
         {
             services.AddControllersWithViews();
             services.AddInfrastructure(_configuration);
-            services.AddMediatR();
+            services.AddMediatR(typeof(GetCountriesQuery));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
