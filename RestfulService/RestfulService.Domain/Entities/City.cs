@@ -11,6 +11,5 @@ namespace RestfulService.Domain.Entities
         public bool isCapital { get; set; }
         public int Population { get; set; } 
 
-        public Country country { get; set; }
     }
 }

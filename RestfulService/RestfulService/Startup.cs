@@ -21,7 +21,7 @@ namespace RestfulService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddInfrastructure();
+            services.AddInfrastructure(_configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
