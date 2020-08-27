@@ -20,5 +20,10 @@ namespace RestfulService.Controlers
         {
             return View(await Mediator.Send(new GetCountriesQuery()));
         }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            return View(await Mediator.Send(new GetCountryByIdQuery { ListId = id }));
+        }
     }
 }
