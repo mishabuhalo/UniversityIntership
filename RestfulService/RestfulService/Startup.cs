@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RestfulService.Infrastructure;
 using RestfulService.Infrastructure.Persistance;
+using MediatR
 
 namespace RestfulService
 {
@@ -23,6 +24,7 @@ namespace RestfulService
         {
             services.AddControllersWithViews();
             services.AddInfrastructure(_configuration);
+            services.AddMediatR();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

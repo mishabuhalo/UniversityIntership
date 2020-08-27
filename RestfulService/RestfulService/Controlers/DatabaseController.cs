@@ -7,7 +7,7 @@ using RestfulService.Infrastructure.Persistance;
 
 namespace RestfulService.Controlers
 {
-    public class DatabaseController : Controller
+    public class DatabaseController : ControlerBase
     {
         private readonly ApplicationDbContext _context;
 
