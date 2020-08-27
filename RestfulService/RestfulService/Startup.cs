@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RestfulService.Infrastructure;
 
 namespace RestfulService
 {
@@ -19,7 +20,8 @@ namespace RestfulService
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
+            services.AddControllersWithViews();
+            services.AddInfrastructure();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
