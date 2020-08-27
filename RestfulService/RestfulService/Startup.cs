@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RestfulService.Infrastructure;
+using RestfulService.Infrastructure.Persistance;
 
 namespace RestfulService
 {

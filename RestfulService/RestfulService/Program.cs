@@ -15,7 +15,7 @@ namespace RestfulService
 {
     public class Program
     {
-        public async static void Main(string[] args)
+        public static void Main(string[] args)
         {
             var webHost = CreateWebHostBuilder(args).Build();
 
@@ -30,7 +30,7 @@ namespace RestfulService
                         context.Database.Migrate();
                     }
 
-                    await AppdlicationDbContextSeed.SeedSampleDataAsync(context);
+                     AppdlicationDbContextSeed.SeedSampleDataAsync(context);
                 }
                 catch(Exception e)
                 {
@@ -38,7 +38,7 @@ namespace RestfulService
                 }
             }
 
-            await webHost.RunAsync();
+             webHost.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -47,8 +47,7 @@ namespace RestfulService
                 var env = hostingContext.HostingEnvironment;
 
                 config.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
-                        .AddJsonFile("appsettings.Local.json", optional: true, reloadOnChange: true);
+                        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
 
             })
             .UseStartup<Startup>();
