@@ -1,0 +1,45 @@
+﻿@model RestfulService.Domain.Entities.City
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>City</h4>
+
+@using (Html.BeginForm())
+{
+    <p>
+        City name <br />
+        @Html.EditorFor(model => model.Name)
+    </p>
+    <p>
+        City population <br />
+        @Html.EditorFor(model => model.Population)
+    </p>
+    <p>
+        Is capital <br />
+        @Html.EditorFor(model => model.isCapital)
+    </p>
+
+    <p>
+        Country <br />
+        @Html.DropDownListFor(model => model.CountryId, ViewBag.countries as SelectList)
+    </p>
+
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+}
+
+<div>
+
+    @Html.ActionLink("Back to countries list", "List")
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
