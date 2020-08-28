@@ -1,0 +1,30 @@
+﻿@model RestfulService.Domain.Entities.Country
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Create</h1>
+
+<h4>Edit</h4>
+<hr />
+@using (Html.BeginForm())
+{
+    <p>
+        Country name <br />
+        @Html.EditorFor(model => model.Name)
+    </p>
+
+    <p>
+        <input type="submit" value="Submit" />
+    </p>
+}
+
+<div>
+
+    @Html.ActionLink("Back to countries list", "List")
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
