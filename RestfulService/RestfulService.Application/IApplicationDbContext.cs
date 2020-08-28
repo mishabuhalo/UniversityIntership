@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RestfulService.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RestfulService.Application
 {
@@ -10,6 +9,7 @@ namespace RestfulService.Application
     {
          DbSet<City> Cities { get; set; }
          DbSet<Country> Countries { get; set; }
+         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
 
     }
 }

@@ -4,6 +4,8 @@ using RestfulService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RestfulService.Infrastructure.Persistance
 {
@@ -16,6 +18,11 @@ namespace RestfulService.Infrastructure.Persistance
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :base(options)
         {
              //Database.EnsureCreated();
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
+        {
+            return base.SaveChangesAsync(cancellationToken);
         }
     }
 }
