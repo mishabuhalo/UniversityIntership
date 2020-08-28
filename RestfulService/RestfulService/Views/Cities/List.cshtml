@@ -28,26 +28,30 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.isCapital)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Population)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Country.Id)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", "Cities", new { id = item.Id }, null)|
-                @Html.ActionLink("Details", "Details", "Cities", new { id = item.Id }, null)|
-                @Html.ActionLink("Delete", "Delete", "Cities", new { id = item.Id }, null)
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.isCapital)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Population)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country.Id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", "Cities", new { id = item.Id }, null)|
+                    @Html.ActionLink("Details", "Details", "Cities", new { id = item.Id }, null)|
+                    @Html.ActionLink("Delete", "Delete", "Cities", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
     </tbody>
+
+
 </table>
+@Html.ActionLink("Back to home", "Index", "Home")

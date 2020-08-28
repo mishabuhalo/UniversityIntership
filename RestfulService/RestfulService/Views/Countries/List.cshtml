@@ -20,18 +20,21 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
 
-                @Html.ActionLink("Edit", "Edit", "Countries", new { id = item.Id }, null)|
-                @Html.ActionLink("Details", "Details", "Countries", new { id = item.Id }, null)|
-                @Html.ActionLink("Delete", "Delete", "Countries", new { id = item.Id }, null)
-            </td>
-        </tr>
-}
+                    @Html.ActionLink("Edit", "Edit", "Countries", new { id = item.Id }, null)|
+                    @Html.ActionLink("Details", "Details", "Countries", new { id = item.Id }, null)|
+                    @Html.ActionLink("Delete", "Delete", "Countries", new { id = item.Id }, null)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@Html.ActionLink("Back to home", "Index", "Home")

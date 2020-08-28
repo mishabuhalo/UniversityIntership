@@ -4,6 +4,7 @@ using RestfulService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +25,8 @@ namespace RestfulService.Application.Cities.Queries
         }
         public async Task<City> Handle(GetCityByIdQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Cities.Where(city => city.Id == request.Id).FirstOrDefaultAsync();
+            var cityAA = await _context.Cities.Include(x => x.Country).Where(city => city.Id == request.Id).FirstOrDefaultAsync();
+            return cityAA;
         }
     }
 }

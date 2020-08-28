@@ -22,7 +22,7 @@ namespace RestfulService.Application.Cities
         }
         public async Task<List<City>> Handle(ListCitiesQuery request, CancellationToken cancellationToken)
         {
-            return await _context.Cities.ToListAsync();
+            return await _context.Cities.Include(x => x.Country).ToListAsync();
         }
     }
 }

@@ -39,7 +39,7 @@ namespace RestfulService.Controlers
         {
             var id = await Mediator.Send(new CreateCountryCommand { Name = country.Name });
 
-            return Redirect($"/Countries/List/{id}");
+            return Redirect("/Countries/List/");
         }
 
         [HttpGet]

@@ -24,7 +24,7 @@ namespace RestfulService.Application.Countries
         }
         public async Task<Country> Handle(GetCountryByIdQuery request, CancellationToken cancellationToken)
         {
-             return await _context.Countries.Where(country => country.Id == request.ListId).FirstOrDefaultAsync();
+             return await _context.Countries.Include(x=>x.Cities).FirstOrDefaultAsync(country=>country.Id == request.ListId);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace RestfulService.Controlers
         public async Task<IActionResult> Create(City city)
         {
             var id = await Mediator.Send(new CreateCityCommand { Name = city.Name, CountryId = city.CountryId, IsCapital = city.isCapital, Population = city.Population });
-            return Redirect($"/Cities/List/{id}");
+            return Redirect("/Cities/List/");
         }
 
         public async Task<IActionResult> Delete(int? id)
